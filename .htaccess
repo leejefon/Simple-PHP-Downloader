@@ -1,0 +1,6 @@
+RewriteEngine On
+
+# Rewrite /download to the downloader
+RewriteCond %{HTTP_HOST} ^example.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www.example.com$
+RewriteRule ^download(.*)$ /downloader/index.php [L,NC]
