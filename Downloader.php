@@ -103,8 +103,13 @@ class Downloader extends Download {
 			exit;
 		}
 
-		$username = $_SERVER["PHP_AUTH_USER"]; // handle hash and salt
-		$password = call_user_func($auth["hash"], $auth["salt"] . $_SERVER["PHP_AUTH_PW"]);
+		$username = $_SERVER["PHP_AUTH_USER"]; 
+		if (!empty($auth['salt'])) {
+			$password = sprintf($auth['salt'], $_SERVER['PHP_AUTH_PW']);
+		} else {
+			$password = $_SERVER['PHP_AUTH_PW'];
+		}
+		$password = call_user_func($auth["hash"], $password);
 
 		$type = explode("/", $auth["type"]);
 

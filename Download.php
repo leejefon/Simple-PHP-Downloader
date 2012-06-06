@@ -48,7 +48,7 @@ class Download {
 			'user' => 'user_login',
 			'pass' => 'user_pass',
 			'hash' => 'md5',
-			'salt' => ''
+			'salt' => 'aoiusdifuowe%s'
 		)
 	);
 }
