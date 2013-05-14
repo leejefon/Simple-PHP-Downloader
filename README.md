@@ -13,8 +13,7 @@ Options:
 --------
  - auth => auth name in $auth
  - zip* => true/false
-
- * Files can be downloaded zipped by appending .zip to the end of download path as well.
+   * Files can be downloaded zipped by appending .zip to the end of download path as well.
 
 
 Auth:
